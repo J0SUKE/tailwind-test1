@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.link-hover
+{
+    position: relative;    
+    padding-bottom: 2px;    
+}
+.link-hover:hover::before
+{   
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.link-hover::before
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    background: black;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s;
+}
